@@ -1,0 +1,249 @@
+﻿<br /><br /><br /><br />
+<div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+
+        <p class="text-info">
+            Thanks for shopping at the {{StoreOwner}} Store.<br />
+            This is your shopping cart. Here you can edit the items,
+            go back to the store, clear the cart, or check out.
+        </p>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span8">
+
+                    <!-- items -->
+                    <table class="table table-bordered">
+
+                        <!-- header -->
+                        <tr class="well">
+                            <td><b>Item</b></td>
+                            <td class="tdCenter"><b>Quantity</b></td>
+                            <td class="tdRight"><b>Price</b></td>
+                            <td />
+                        </tr>
+
+                        <!-- empty cart message -->
+                        <tr ng-hide="cart.getTotalCount() > 0">
+                            <td class="tdCenter" colspan="4">
+                                Your cart is empty.
+                            </td>
+                        </tr>
+
+                        <!-- cart items -->
+                        <tr ng-repeat="item in cart.items | orderBy:'name'">
+                            <td>{{item.name}}</td>
+                            <td class="tdCenter">
+                                <div class="input-append">
+                                    <!-- use type=tel instead of  to prevent spinners -->
+                                    <input class="span3 text-center" type="tel"
+                                           ng-model="item.quantity"
+                                           ng-change="cart.saveItems()" />
+                                    <button class="btn btn-success" type="button"
+                                            ng-disabled="item.quantity >= 1000"
+                                            ng-click="cart.addItem(item.sku, item.name, item.price, +1)">
+                                        +
+                                    </button>
+                                    <button class="btn btn-inverse" type="button"
+                                            ng-disabled="item.quantity <= 1"
+                                            ng-click="cart.addItem(item.sku, item.name, item.price, -1)">
+                                        -
+                                    </button>
+                                </div>
+                            </td>
+                            <td class="tdRight">{{item.price * item.quantity | currency}}</td>
+                            <td class="tdCenter" title="remove from cart">
+                                <a href="" ng-click="cart.addItem(item.sku, item.name, item.price, -10000000)">
+                                    <i class="icon-remove" />
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- footer -->
+                        <tr class="well">
+                            <td><b>Total</b></td>
+                            <td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
+                            <td class="tdRight"><b>{{cart.getTotalPrice() | currency}}</b></td>
+                            <td />
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- buttons -->
+                <div class="span4">
+                    <p class="text-info">
+                        <button class="btn btn-block"
+                                onclick="window.location.href=''">
+                            <i class="icon-chevron-left" /> back to store
+                        </button>
+                        <button class="btn btn-block btn-danger"
+                                ng-click="cart.clearItems()"
+                                ng-disabled="cart.getTotalCount() < 1">
+                            <i class="icon-trash icon-white" /> clear cart
+                        </button>
+                    </p>
+
+                    <br /><br />
+
+
+                    <br /><br />
+                    <div data-ng-hide="!authentication.isAuth">
+                        <p class="text-info" data-ng-hide="!priceZero">
+
+                            <button class="btn btn-block btn-primary"
+                                    ng-click="cart.checkout('PayPal')"
+                                    ng-disabled="cart.getTotalCount() < 1">
+                                <i class="icon-ok icon-white" /> check out using PayPal
+                            </button>
+                            <button class="btn btn-block btn-primary"
+                                    ng-click="cart.checkout('Google')"
+                                    ng-disabled="cart.getTotalCount() < 1">
+                                <i class="icon-ok icon-white" /> check out using Google
+                            </button>
+                            <button class="btn btn-block btn-primary"
+                                    ng-click="cart.checkout('Stripe')"
+                                    ng-disabled="cart.getTotalCount() < 1">
+                                <i class="icon-ok icon-white" /> check out using Stripe
+                            </button>
+                        </p>
+                        <p data-ng-hide="priceZero">
+                            <button class="btn btn-block btn-danger"
+                                    ng-click="downloadFile()"
+                                    ng-disabled="cart.getTotalCount() < 1">
+                                <i class="icon-trash icon-white" /> Download
+                            </button>
+                            
+                        </p>
+                    </div>
+                    <!-- Stripe needs a form to post to -->
+                    <form class="form-stripe"></form>
+
+                    <br /><br />
+                    <div data-ng-hide="!authentication.isAuth">
+                        <p class="text-info" data-ng-hide="!priceZero">
+                            <button class="btn btn-block btn-link"
+                                    ng-click="cart.checkout('PayPal')"
+                                    ng-disabled="cart.getTotalCount() < 1">
+                                <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="checkout PayPal" />
+                            </button>
+                            <button class="btn btn-block btn-link"
+                                    ng-click="cart.checkout('Google')"
+                                    ng-disabled="cart.getTotalCount() < 1">
+                                <img src="https://checkout.google.com/buttons/checkout.gif?w=168&h=44&style=white&variant=text" alt="checkoutGoogle" />
+                            </button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row" data-ng-hide="authentication.isAuth">
+                    <div class="col-xs-3"></div>
+                    <div class="col-xs-6">
+                        <div class="center">
+                            <button class="btn btn-block btn-success"
+                                    data-ng-click="loginMode = true;regMode = false">
+                                Login
+                            </button>
+                            <button class="btn btn-block btn-primary"
+                                    ng-click="cart.checkout('PayPal')" data-ng-click="regMode = true;loginMode = false">
+                                Register
+                            </button>
+                        </div>
+                        <div class="center">
+                            <form id="login" data-ng-show="loginMode" ng-controller="loginController">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h2 class="form-login-heading">Login</h2>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Username" data-ng-model="loginData.userName" required autofocus>
+                                            <!--<div ng-messages="registration.userName.$error" ng-messages-include="messages.html"></div>-->
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password" data-ng-model="loginData.password" required>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-ng-model="loginData.useRefreshTokens"><strong> Use Refresh Tokens</strong>
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-md btn-info btn-block" type="submit" data-ng-click="login()" v-busy="isBusy" v-busy-label="please wait ..." v-pressable>Login</button>
+                                        <div data-ng-hide="message == ''" class="alert alert-danger">
+                                            {{message}}
+                                        </div>
+                                        <a href="#/forgotpassword">Forgot Password</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h2 class="form-login-heading">Social Logins</h2>
+                                        <p>Or you can login using one of the social logins bleow</p>
+                                        <button class="btn btn-large btn-facebook btn-block" type="button" data-ng-click="authExternalProvider('Facebook')"><i class="fa fa-facebook"></i> | Connect with Facebook</button>
+                                        <button class="btn btn-large btn-twitter btn-block" type="button" data-ng-click="authExternalProvider('Twitter')"><i class="fa fa-twitter"></i> | Connect with Twitter</button>
+                                        <button class="btn btn-large btn-pinterest btn-block" type="button" data-ng-click="authExternalProvider('Facebook')"><i class="fa fa-pinterest"></i> | Connect with Microsoft</button>
+                                        <button class="btn btn-large btn-linkedin btn-block" type="button" data-ng-click="authExternalProvider('linkedin')"><i class="fa fa-linkedin"></i> | Connect with LinkedIn</button>
+                                        <button class="btn btn-large btn-instagram btn-block" type="button" data-ng-click="authExternalProvider('instagram')"><i class="fa fa-instagram"></i> | Connect with instagram</button>
+                                        <button class="btn btn-large btn-google-plus btn-block" type="button" data-ng-click="authExternalProvider('Google')"><i class="fa fa-google-plus"></i> | Connect with Google+</button>
+                                    </div>
+                                    <div class="col-md-1">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                            </form>
+                            <form id="register" data-ng-show="regMode" ng-controller="signupController">
+
+                                <!--ng-submit="signUp()"-->
+                                <h2 class="form-login-heading">Sign up</h2>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Email" ng-minlength="7" data-ng-model="registration.UserName" required autofocus>
+                                    <span style="color:red" ng-show="$error.minlength">
+
+                                        Your Name Should Contain Atleast 3 Characters
+                                    </span>
+                                    <!--<div ng-messages="registration.UserName.$error" ng-messages-include="messages.html"></div>-->
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Organization" data-ng-model="registration.Organization" required autofocus>
+                                    <!--<div ng-messages="registration.Organization.$error" ng-messages-include="messages.html"></div>-->
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name" data-ng-model="registration.firstName" required autofocus>
+                                    <!--<div ng-messages="registration.firstName.$error" ng-messages-include="messages.html"></div>-->
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name" data-ng-model="registration.lastName" required autofocus>
+                                    <!--<div ng-messages="registration.lastName.$error" ng-messages-include="messages.html"></div>-->
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" data-ng-model="registration.password" required>
+                                    <!--<div ng-messages="registration.password.$error" ng-messages-include="messages.html"></div>-->
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password" data-ng-model="registration.confirmPassword" required>
+                                    <!--<div ng-messages="registration.confirmPassword.$error" ng-messages-include="messages.html"></div>-->
+                                </div>
+                                <!--<div vc-recaptcha
+                            theme="'light'"
+                            key="model.key"
+                            on-create="setWidgetId(widgetId)"
+                            on-success="setResponse(response)"
+                            on-expire="cbExpiration()"></div>-->
+                                <button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="signUp()" v-busy="isBusy" v-busy-label="please wait ..." v-pressable>Submit</button>
+                                <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                                    {{message}}
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-3"></div>
+                </div>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2"></div>
+
+</div>

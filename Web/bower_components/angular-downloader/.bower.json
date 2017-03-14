@@ -1,0 +1,33 @@
+{
+  "name": "angular-downloader",
+  "version": "0.1.1",
+  "description": "A downloader directive for angularjs.",
+  "authors": [
+    "Dario Andrei <wouldgo84@gmail.com>",
+    "Filippo Oretti <filippo.oretti@gmail.com"
+  ],
+  "keywords": [
+    "download",
+    "ajax",
+    "blob"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/720kb/angular-downloader",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "8d58c5e37962db60ced484e7c59ef6391fb99ab5"
+  },
+  "_source": "git://github.com/720kb/angular-downloader.git",
+  "_target": "~0.1.1",
+  "_originalSource": "angular-downloader",
+  "_direct": true
+}

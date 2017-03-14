@@ -1,0 +1,236 @@
+﻿<br />
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Account Setup
+    </div>
+    <div class="panel-body">
+        <tabset class="ui-tab">
+            <tab heading="Access">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Roles Administration
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Create Role
+                                    </div>
+                                    <div class="panel-body">
+                                        <input type="text" class="form-control" id="txtRoles" ng-model="admin.txtRoles" placeholder="Create new roles" /><br />
+                                        <button class="btn btn-primary" ng-click="createNewRole()">create</button>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Create Role
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col-lg-4 -->
+                            <div class="col-lg-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        Add User Roles
+                                    </div>
+                                    <div class="panel-body">
+                                        <tags-input class="bootstrap"
+                                                    ng-model="txtUsers"
+                                                    placeholder="Select User"
+                                                    replace-spaces-with-dashes="false"
+                                                    add-from-autocomplete-only="true">
+                                            <auto-complete source="loadAllUsers($query)"
+                                                           min-length="0"
+                                                           debounce-delay="0"
+                                                           max-results="10"></auto-complete>
+
+                                        </tags-input>
+                                        <tags-input class="bootstrap"
+                                                    ng-model="txtUserRoles"
+                                                    placeholder="Select Roles"
+                                                    replace-spaces-with-dashes="false"
+                                                    add-from-autocomplete-only="true">
+                                            <auto-complete source="loadAllRoles($query)"
+                                                           min-length="0"
+                                                           debounce-delay="0"
+                                                           max-results="10"></auto-complete>
+
+                                        </tags-input>
+                                        <br />
+                                        <button class="btn btn-primary" ng-click="AddUser2RoleRole()">Add</button>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col-lg-4 -->
+                            <!--<div class="col-lg-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        Success Panel
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!-- /.col-lg-4 -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Create Categories
+                                    </div>
+                                    <div class="panel-body">
+                                        <input type="text" class="form-control" id="txtCategories" ng-model="admin.txtCategories" placeholder="Create New Categories" /><br />
+                                        <button class="btn btn-primary" ng-click="createNewCategories()">create</button>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Create Categories
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                       Role List
+                                    </div>
+                                    <div class="panel-body">
+                                        <div ng-repeat="d in allrolesList">
+                                            <code>{{d}}</code><br />
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col-lg-4 -->
+                            <div class="col-lg-8">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        Warning Panel
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col-lg-4 -->
+                            <!--<div class="col-lg-4">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        Danger Panel
+                                    </div>
+                                    <div class="panel-body">
+                                        
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!-- /.col-lg-4 -->
+                        </div>
+                        <!-- /.row -->
+                        <!--<div class="row">
+                            <div class="col-lg-4">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        Green Panel
+                                    </div>
+                                    <div class="panel-body">
+                                        
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="panel panel-yellow">
+                                    <div class="panel-heading">
+                                        Yellow Panel
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="panel panel-red">
+                                    <div class="panel-heading">
+                                        Red Panel
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        Panel Footer
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </tab>
+            <tab heading="Users List">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Users List
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Company</th>
+                                        <th>Location</th>
+                                        <th>Phone Number</th>
+                                        <th>Reg. Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="d in UserList" class="odd gradeX">
+                                        <td>{{d.email}}</td>
+                                        <td>{{d.organization}}</td>
+                                        <td>{{d.address}}</td>
+                                        <td class="center">{{d.PhoneNumber}}</td>
+                                        <td class="center">{{d.regDate| date:'MM-dd-yyyy'}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+            </tab>
+           
+            <tab heading="Settings"></tab>
+        </tabset>
+    </div>
+    <div class="panel-footer">
+
+    </div>
+</div>

@@ -1,0 +1,210 @@
+﻿<div class="page page-profile">
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <section class="panel panel-box">
+                <div class="panel-top bg-primary">
+                    <div class="text-center" >
+                        <h3 ng-repeat="d in UserDetails"><span class="white">{{d.organization | uppercase}}</span></h3>
+                        <!--<p>{{d.ulevel}}</p>-->
+                    </div>
+                    <div class="divider divider-lg"></div>
+                    <div class="divider divider-lg"></div>
+                </div>
+                <div class="panel-img bg-primary">
+                    <img alt="" src="images/g1.jpg" class="img-circle">
+                </div>
+                <!--<div class="list-justified-container">
+                    <ul class="list-justified text-center">
+                        <li>
+                            <p class="text-muted">{{department}}</p>
+                            <p class="size-h3">Department</p>
+                        </li>
+                        <li>
+                            <p class="text-muted">{{unit}}</p>
+                            <p class="size-h3">Unit</p>
+                        </li>
+                        <li>
+                            <p class="text-muted">{{level}}</p>
+                            <p class="size-h3">Level</p>
+                        </li>
+                    </ul>
+                </div>-->
+
+
+            </section>
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile Info</strong></div>
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <ul class="list-unstyled list-info" ng-repeat="d in UserDetails">
+                                <li>
+                                    <span class="icon glyphicon glyphicon-user"></span>
+                                    <label>User name</label>
+                                    {{d.email}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-envelope"></span>
+                                    <label>Email</label>
+                                    {{d.email}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-home"></span>
+                                    <label>Address</label>
+                                    {{d.address || '-'}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-earphone"></span>
+                                    <label>Contact</label>
+                                    {{d.phoneNumber || '-'}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-flag"></span>
+                                    <label>Nationality</label>
+                                    {{d.city|| 'Nigeria'}}
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Other Information</strong></div>
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <ul class="list-unstyled list-info">
+                                <li>
+                                    <span class="icon glyphicon glyphicon-user"></span>
+                                    <label>Supervisor</label>
+                                    {{supervisor}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-envelope"></span>
+                                    <label>Job Title</label>
+                                    {{jobTitle}}
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="row">
+                <div class="col-sm-6">
+                    <div class="panel mini-box">
+                        <span class="box-icon rounded bg-danger">
+                            <i class="fa fa-film"></i>
+                        </span>
+                        <div class="box-info">
+                            <p class="size-h2">{{umstatus}}</p>
+                            <p class="text-muted">Marital Status</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel mini-box">
+                        <span class="box-icon rounded bg-warning">
+                            <i class="fa fa-camera"></i>
+                        </span>
+                        <div class="box-info">
+                            <p class="size-h2">{{uage}}</p>
+                            <p class="text-muted">Age</p>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            
+
+
+        </div>
+        <!--<div class="col-md-6">
+
+            <div class="ui-timline-container ui-timline-left">
+                <section class="ui-timeline">
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-caption">
+                                    <a href="javascript:;" class="btn btn-primary btn-block">Dependants</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item" ng-repeat="d in vm.UserDependantsDetails">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">3 min ago</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-info"><i class="fa fa-asterisk"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-primary">{{d.dependantName}}</h4>
+                                    <p><span>Status: </span>{{d.RelationshipStatus}}</p>
+                                    <p><span>DOB: </span>{{d.DateOfBirth | date:'MM-dd-yyyy'}}</p>
+                                    <%--<p>Consectetur adipisicing elit. Error, accusantium debitis voluptatem dolore excepturi ducimus fugiat nulla perspiciatis quo ipsum non eligendi nisi veniam maxime in quas atque omnis cumque!</p>--%>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                   
+
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-caption">
+                                    <a href="javascript:;" class="btn btn-danger btn-block">Emergency Contacts</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="tl-item" ng-repeat="d in vm.EmergencyContacts">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">8:30 PM</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-warning"><i class="fa fa-asterisk"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile">{{d.emergName}}</h4>
+                                    <p>{{d.Relationship}}<br />{{d.HomeTelphone}}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-caption">
+                                    <a href="javascript:;" class="btn bg-warning btn-block">Work History</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tl-item" ng-repeat="d in vm.StaffJobHistory">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">8:30 PM</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-warning"><i class="fa fa-asterisk"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile">{{d.company}}</h4>
+                                    <p>{{d.jobTitle}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                   
+
+                </section>
+            </div>
+        </div>-->
+    </div>
+
+</div>

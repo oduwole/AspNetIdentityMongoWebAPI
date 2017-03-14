@@ -1,0 +1,28 @@
+﻿<div class="headspace">
+
+</div>
+<div class="row">
+    <div class="col-md-1">
+        &nbsp;
+    </div>
+    <div class="col-md-10">
+        <tabset class="ui-tab">
+            <tab heading="Campaigns">
+                <div>
+                    <button type="button" class="btn btn-primary" ng-click="openAddDeductionModal()">Dahn Modal</button>
+                    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+                    <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
+                    <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
+                    <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
+                    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+                    Campaigns
+                </div>
+            </tab>
+            <tab heading="Ads"></tab>
+            <tab heading="Settings"></tab>
+        </tabset>
+    </div>
+    <div class="col-md-1">
+        &nbsp;
+    </div>
+</div>

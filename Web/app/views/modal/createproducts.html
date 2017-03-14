@@ -1,0 +1,25 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">{{modalOptions.headerText}}</h3>
+</div>
+<div class="modal-body">
+    <input type="text" ng-model="txtCategoryP" id="txtCategoryP" class=" form-control " required placeholder="Enter Product" /><br />
+    <!--<select >
+        <option ng-repeat="d in modalOptions.category" ng-model="selectOption">{{d.categoryName}}</option>
+    </select>-->
+    <select name="lvCategoryName" id="lvCategoryName" class="form-control" ng-model="lvCategoryName">
+        <option value="{{d.categoryName || 'NIL'}}" ng-repeat="d in modalOptions.category">{{d.categoryName || 'NIL'}}</option>
+    </select>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary"
+            data-ng-click="modalOptions.close()">
+        {{modalOptions.closeButtonText}}
+    </button>
+    <button class="btn btn-warning "
+            data-ng-click="modalOptions.ok();">
+        {{modalOptions.actionButtonText}}
+    </button>
+    <!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>-->
+</div>

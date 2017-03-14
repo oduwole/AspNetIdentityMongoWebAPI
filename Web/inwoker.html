@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inline WebWorker</title>
+    <meta charset="utf-8" />
+    <script>
+        // create a namespace for the object
+        var workerHelpers = workerHelpers || {};
+        
+        // set the blob builder and window.URL according to the browser prefix if needed
+        var BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
+        window.URL = window.URL || window.webkitURL;
+ 
+        workerHelpers.InlineWorkerCreator = function () {
+        };
+ 
+        workerHelpers.InlineWorkerCreator.prototype = function () {
+            createInlineWorker = function (workerBody, onmessage) {
+                //if (BlobBuilder) {
+                    //var bb = new BlobBuilder();
+var bb = new Blob();
+                   // bb.append(workerBody);
+ var blob = new Blob([JSON.stringify(workerBody, null, 2)], {type : 'application/json'});
+                    var workerURL = window.URL.createObjectURL(blob);//bb.getBlob());
+                    var worker = new Worker(workerURL);
+                    worker.onmessage = onmessage;
+                    return workerURL;
+                /*}
+                else {
+                    console.log('BlobBuilder is not supported in the browser');
+                    return;
+                }*/
+            },
+            releaseInlineWorker = function (workerURL) {
+                window.URL.revokeObjectURL(workerURL);
+            };
+ 
+            return {
+                createInlineWorker: createInlineWorker,
+                releaseInlineWorker: releaseInlineWorker
+            };
+        } ();
+ 
+        window.addEventListener('DOMContentLoaded', function () {
+            var creator = new workerHelpers.InlineWorkerCreator();
+            var workerURL = creator.createInlineWorker('postMessage(\'worker sent message\');', function (e) {
+                console.log("Received: " + e.data);
+            });
+            console.log(workerURL);
+ 
+            // release the URL after a second
+            setTimeout(function () { creator.releaseInlineWorker(workerURL); }, 1000);
+        }, false);        
+    </script>
+</head>
+<body>
+</body>
+</html>

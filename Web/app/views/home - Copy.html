@@ -1,0 +1,283 @@
+﻿<style >
+         header {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    color: #fff;
+    background-image: url(../../img/header.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+         .input-large.input-large-altered {
+  /*width: 210px;*/
+  height: 50px ;
+  margin-bottom: 10px;
+  line-height: 30px;
+  padding: 11px 19px;
+  font-size: 17.5px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+</style>
+<section class="bg-facebook" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">{{dOrg | uppercase}}</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 text-center">
+
+                <div class="input-group ">
+                    <input type="text" class="form-control input-large input-large-altered" placeholder="Search Datasets" ng-model="search" ng-keypress="txtEnter($event,search)" />
+                    <div class="input-group-addon"><i ng-click="searchData(search);" class="fa fa-search"></i></div>
+                </div>
+
+            </div>
+
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6" style="min-height :300px; max-height :380px;" ng-repeat="d in items">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <a href="OpenFestivalView"><img ng-src="{{d.category | imagefilter}}" alt="Project Name"></a>
+                    </div>
+                    <div class="portfolio-info-fade">
+                        <ul>
+                            <li class="portfolio-project-name">Category:= {{d.category}}</li>
+                            <li>Name:= {{d.name}} ...</li>
+                            <li>Author:= {{d.organization}}</li>
+                            <li>Price:= {{d.price}}</li>
+                            <li class="read-more"><a ng-click="cart.addItem(d.transactionID, d.name, d.price, 1,d.fileUrl,d.category,d.description)" class="btn">Add to cart</a></li>
+                            <li class="read-more"><a href="#/viewDataDetails?data={{d.transactionID}}" class="btn">Review</a></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">We've got what you need!</h2>
+                <hr class="light">
+                <p class="text-faded">Upload, showcase and sell your data</p>
+                <a href="gettingstarted.html" class="btn btn-default btn-xl">Get Started!</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="test"></section>
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">At Your Service</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                    <h3><a href="services.html#track">Track</a></h3>
+                    <p class="text-muted">
+                        <!--You can use this theme as is, or you can make changes!-->
+                        You can track social media discussions based on search keys with our tool!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                    <h3><a href="services.html#analyze">Analyze</a></h3>
+                    <p class="text-muted">
+                        <!--Our templates are updated regularly so they don't break.-->
+                        Analyze the tracked data with our sentiment analyzer to get impressions on discussions.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                    <h3><a href="services.html#uptodate">Be Up to Date</a></h3>
+                    <p class="text-muted">
+                        <!--We update dependencies to keep things fresh-->.
+                        Get instant notification or summary of the sentiments on tracked posts via our various notification channels.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<aside class="bg-dark">
+    <div class="container text-center">
+        <div class="call-to-action">
+            <h2>Free for first 3 Months!</h2>
+            <p> Ready to get started ? That's great!!</p>
+            <a href="http://app.socialagg.com/signup" target="_blank" class="btn btn-default btn-xl wow tada">Sign Up Now!</a>
+        </div>
+    </div>
+</aside>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Let's Get In Touch!</h2>
+                <hr class="primary">
+                <p>Have any question ? <!--That's great!--> You can give us a call or send us an email and we will get back to you as soon as possible!</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                <p><b>Phone:</b> +234 8056515312<br /></p>
+                <p><b>Skype: </b></p>
+            </div>
+
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p><a href="mailto:info@deitalyst.com">info@deitalyst.com</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="bg-dark">
+    <!--bg-light-gray-->
+
+
+    <div class="section">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="row">
+                <!-- Testimonial -->
+                <div class="testimonial col-md-4 col-sm-6">
+                    <!-- Author Photo -->
+                    <div class="author-photo">
+                        <img src="img/user1.jpg" alt="Author 1">
+                    </div>
+                    <div class="testimonial-bubble">
+                        <blockquote>
+                            <!-- Quote -->
+                            <p class="quote">
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut."
+                            </p>
+                            <!-- Author Info -->
+                            <cite class="author-info">
+                                - Name Surname,<br>Managing Director at <a href="#">Some Company</a>
+                            </cite>
+                        </blockquote>
+                        <div class="sprite arrow-speech-bubble"></div>
+                    </div>
+                </div>
+                <!-- End Testimonial -->
+                <div class="testimonial col-md-4 col-sm-6">
+                    <div class="author-photo">
+                        <img src="img/user5.jpg" alt="Author 2">
+                    </div>
+                    <div class="testimonial-bubble">
+                        <blockquote>
+                            <p class="quote">
+                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
+                            </p>
+                            <cite class="author-info">
+                                - Name Surname,<br>Managing Director at <a href="#">Some Company</a>
+                            </cite>
+                        </blockquote>
+                        <div class="sprite arrow-speech-bubble"></div>
+                    </div>
+                </div>
+                <div class="testimonial col-md-4 col-sm-6">
+                    <div class="author-photo">
+                        <img src="img/user2.jpg" alt="Author 3">
+                    </div>
+                    <div class="testimonial-bubble">
+                        <blockquote>
+                            <p class="quote">
+                                "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                            </p>
+                            <cite class="author-info">
+                                - Name Surname,<br>Managing Director at <a href="#">Some Company</a>
+                            </cite>
+                        </blockquote>
+                        <div class="sprite arrow-speech-bubble"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="section">
+    <div class="container">
+        <h2>Our Clients</h2>
+        <div class="clients-logo-wrapper text-center row">
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/canon.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/cisco.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/dell.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/ea.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/ebay.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/facebook.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/google.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/hp.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/microsoft.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/mysql.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/sony.png" alt="Client Name"></a></div>
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/yahoo.png" alt="Client Name"></a></div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="page-header text-center">
+
+  </div>
+<tour step="currentStep">
+    <span tourtip="tip 1"> Highlighted </span>
+    <span tourtip="tip 2"> Elements </span>
+    <input tourtip="or add it as an attribute to your element" />
+</tour>
+    <div class="row">
+        <div class="col-md-2">
+            &nbsp;
+        </div>
+        <div class="col-md-4">
+            <h2>Login</h2>
+            <p class="text-primary">If you have Username and Password, you can use the button below to access the secured content using a token.</p>
+            <p><a class="btn btn-info" href="#/login" role="button">Login &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Sign Up</h2>
+            <p class="text-primary">Use the button below to create Username and Password to access the secured content using a token.</p>
+            <p><a class="btn btn-info" href="#/signup" role="button">Sign Up &raquo;</a></p>
+        </div>
+        <div class="col-md-2">
+            &nbsp;
+        </div>
+
+        <button type="button"
+                ng-click="downloadStuffFromAjax()"
+                downloader="valueThatWillBePopulated"
+                downloader-classes="btn btn-medium center-content bg-success color-white radius3"
+                downloader-custom-text="Download Ready!"
+                downloader-reset="resetDownload">
+            Download Now!
+        </button>
+    </div>-->

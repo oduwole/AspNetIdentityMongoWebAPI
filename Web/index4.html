@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="damorel">
+
+<head>
+    <!--<base href="/web/" />-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Data Market Store">
+    <!--<meta name="keywords" content="socialagg, social media analyzer, social media infographics, social media analyser, social media analytic tool,social aggregator, social media aggregator, social media sentiment analyzer, sentiment analytic tool">-->
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="robots" content="all">
+    <meta name="author" content="socialagg Ltd">
+
+    <title>Deitalyst</title>
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />-->
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!--<link href="content/css/font-awesome.min.css" rel="stylesheet" />-->
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--<link href="main-orange.css" rel="stylesheet" />-->
+
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/saggAnimate.css" rel="stylesheet" />
+    <link href="css/animText.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <style>
+                .clients-logo-wrapper img {
+                      max-width: 100%;
+                }
+
+                testimonial blockquote {
+          margin: 0;
+          padding: 0;
+          border-left: none;
+        }
+        .testimonial blockquote p {
+          font-size: 0.9em;
+          margin-bottom: 20px;
+          line-height: 1.5;
+        }
+        .testimonial .testimonial-bubble {
+          text-align: justify;
+          -webkit-border-radius: 4px;
+          -webkit-background-clip: padding-box;
+          -moz-border-radius: 4px;
+          -moz-background-clip: padding;
+          border-radius: 4px;
+          background-clip: padding-box;
+          padding: 0 20px 20px 20px;
+          margin: 35px 10px 20px 10px;
+          background: #FFF;
+          position: relative;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+          -moz-box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+          box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+          /*color: inset 0 1px #fff,0 1px 2px #c8cfe6;*/
+          color: #0a0a0a;
+        }
+        .testimonial .testimonial-bubble::before {
+          background-color: #FFF;
+          content: "\00a0";
+          display: block;
+          height: 20px;
+          width: 20px;
+          top: -10px;
+          left: 45%;
+          position: relative;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        .testimonial .author-photo {
+          text-align: center;
+        }
+        .testimonial .author-photo img {
+          margin: auto;
+          border: 5px solid #FFF;
+          -webkit-border-radius: 100px;
+          -webkit-background-clip: padding-box;
+          -moz-border-radius: 100px;
+          -moz-background-clip: padding;
+          border-radius: 100px;
+          background-clip: padding-box;
+          -webkit-box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+          -moz-box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+          box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+          color: inset 0 1px #fff,0 1px 2px #c8cfe6;
+          /*height :100px;*/
+          max-height :120px;
+          max-width :120px;
+        }
+        .testimonial .author-info {
+          font-weight: 400;
+          font-size: 0.8em;
+        }
+
+   .navbar-default {
+    background-color:#8d0606;
+    color:#ffffff;
+    border-radius:0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color:#fff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color:transparent;
+}
+.navbar-default .navbar-brand {
+    color:#eeeeee;
+}
+    </style>
+
+    <link href="content/css/toastr.min.css" rel="stylesheet" />
+    <link href="bower_components/v-button/dist/v-button.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="content/css/ng-tags-input.min.css" rel="stylesheet" />
+    <link href="bower_components/angular-tour/dist/angular-tour.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" data-ng-controller="homeController">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#/">Deitalyst</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" ng-href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ng-href="#services">Services</a>
+                    </li>
+                    <!--<li>
+                        <a class="page-scroll" href="Pricing.html">Pricing</a>
+                    </li>-->
+                    <li>
+                        <a class="page-scroll" ng-href="#contact" >Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ng-href="#team">Our Team</a>
+                    </li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                    <li data-ng-hide="!authentication.isAuth">
+                        <a href="" data-ng-click="logOut()">
+                            <i class="fa fa-power-off"></i>
+                            <span class="hidden-sm text">Logout</span>
+                        </a>
+                    </li>
+                    <!--<li>
+                        <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                                <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                                <li data-ng-hide="!authentication.isAuth" class="dropdown">
+                                    <a href="" class="dropdown-toggle account" data-toggle="dropdown">
+                                        <i class="fa fa-angle-down pull-right"></i>
+                                        <div class="user-mini pull-right">
+                                            <span>{{authentication.userName}}</span>
+                                            <input id="hrusername" type="hidden" value="{{authentication.userName}}" />
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#/">
+                                                <i class="fa fa-user"></i>
+                                                <span class="hidden-sm text">Profile</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#/" class="ajax-link">
+                                                <i class="fa fa-envelope"></i>
+                                                <span class="hidden-sm text">Messages</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-cog"></i>
+                                                <span class="hidden-sm text">Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" data-ng-click="logOut()">
+                                                <i class="fa fa-power-off"></i>
+                                                <span class="hidden-sm text">Logout</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>-->
+                    <li>
+                        <a href="#/cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                            <i class="icon-shopping-cart" />
+                            <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+    
+    <!--<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexController">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                   <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                    <li data-ng-hide="!authentication.isAuth" class="dropdown">
+                        <a href="" class="dropdown-toggle account" data-toggle="dropdown">
+                         <i class="fa fa-angle-down pull-right"></i>
+                            <div class="user-mini pull-right">
+                                <span class="welcome">Welcome,</span>
+                                <span>{{authentication.userName}}</span>
+                                <input id="hrusername" type="hidden" value="{{authentication.userName}}" />
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#/">
+                                    <i class="fa fa-user"></i>
+                                    <span class="hidden-sm text">Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/" class="ajax-link">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="hidden-sm text">Messages</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-cog"></i>
+                                    <span class="hidden-sm text">Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" data-ng-click="logOut()">
+                                    <i class="fa fa-power-off"></i>
+                                    <span class="hidden-sm text">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+    <div class="container-fluid">
+        <div class="row">
+           <div class="col-xs-12">
+                <div data-ng-view="" class="shuffle-animation"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>Short Brief</h3>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <a href="#"><img src="img/portfolio6.jpg" alt="Project Name"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>Navigate</h3>
+                        <ul class="no-list-style footer-navigate-section">
+                            <li><a ng-href="blog">Blog</a></li>
+
+                            <!--<li><a href="#">Portfolio</a></li>
+                            <li><a href="#">eShop</a></li>-->
+                            <li><a href="#">Documentation</a></li>
+                            <li><a ng-href="#services">Services</a></li>
+                            <!--<li><a href="pricing">Pricing</a></li>-->
+                            <li><a ng-href="FAQ">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-footer col-md-4 col-xs-6">
+                        <h3>Contacts</h3>
+                        <p class="contact-us-details">
+                            <b>Address:</b>296 Herbert Macauley  Road Sabo Yaba Lagos<br />
+                            <b>Phone:</b> +234 8056515312<br />
+                            <!--<b>Fax:</b> +234 123 654321<br />-->
+                            <b>Email:</b> <a href="mailto:info@deitalyst.com">Deitalyst</a>
+                        </p>
+                    </div>
+                    <div class="col-footer col-md-2 col-xs-6">
+                        <h3>Stay Connected</h3>
+                        <ul class="footer-stay-connected no-list-style">
+                            <li><a href="https://facebook.com/deitalyst" target="_blank" class="facebook"></a></li>
+                            <li><a href="https://twitter.com/@deitalyst" target="_blank" class="twitter"></a></li>
+                            <li><a href="#" class="googleplus"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-copyright">&copy; <span id="ddate"></span> - <!--<%= DateTime.Now.Year%>--> Deitalyst. All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="container text-center">
+            <p>Copyright &copy; socialagg 2014</p>
+        </div>-->
+    </footer>
+    <!-- jQuery -->
+    <!--<script src="js/jquery.js"></script>-->
+    <!-- Bootstrap Core JavaScript -->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+   
+    <!--<script>
+    $(document).ready(function () {
+        //$("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering();
+        $("#os-phrases > h2").lettering('words').children("span").lettering('words').children("span").lettering();
+
+
+        $('#carousel-clients').carousel({
+            interval: 3000 //TIME IN MILLI SECONDS
+        })
+
+    })
+    $('<span>' + new Date().getFullYear() + '<\/span>').appendTo($('#ddate'));
+    </script>-->
+
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+  
+
+
+    <script src="scripts/jq_sidebar.js"></script>
+    <script src="admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- 3rd party libraries -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!--<script src="scripts/angular.min.js"></script>-->
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/v-button/dist/v-button.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>-->
+    <script src="app/services/common.js"></script>
+    <script src="app/services/logger.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/angularjs-crypto.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/angularjs-crypto.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/plugins/CryptoJSCipher.js"></script>
+    <script src="scripts/aes.js"></script>
+    <script src="scripts/mode-ecb.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/ContentHeaderCheck.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/controllers.js"></script>
+    <script src="scripts/toastr.min.js"></script>
+    <script src="bower_components/angular-tour/dist/angular-tour-tpls.min.js"></script>
+    <script src="bower_components/angular-downloader/src/js/angular-downloader.js"></script>
+
+    <script src="scripts/shoppingcart/store.js"></script>
+    <script src="scripts/shoppingcart/shoppingCart.js"></script>
+    <script src="scripts/shoppingcart/product.js"></script>
+    <script src="scripts/csvParser.js"></script>
+
+    <script src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+    <!-- Include the ngReCaptcha directive -->
+    <script src="bower_components/angular-recaptcha/release/angular-recaptcha.min.js"></script>
+    <!--<script src="./angular-recaptcha.js"></script>-->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js?v=2"></script>
+    <script src="scripts/ng-tags-input.min.js"></script>
+
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js?v=2"></script>
+    <script src="app/services/authService.js?v=2"></script>
+    <script src="app/services/ordersService.js?v=2"></script>
+    <script src="app/services/tokensManagerService.js?v=2"></script>
+    <script src="app/services/browser.js?v=2"></script>
+    <script src="app/services/dashboardService.js?v=2"></script>
+    <script src="app/services/modalService.js?v=2"></script>
+    <script src="app/services/datasetsServices.js?v=2"></script>
+    <script src="app/services/storesService.js?v=2"></script>
+    <script src="app/services/transactionsService.js?v=2"></script>
+    <script src="app/services/csvService.js?v=2"></script>
+
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js?v=2"></script>
+    <script src="app/controllers/homeController.js?v=2"></script>
+    <script src="app/controllers/loginController.js?v=2"></script>
+    <script src="app/controllers/signupController.js?v=2"></script>
+    <script src="app/controllers/ordersController.js?v=2"></script>
+    <script src="app/controllers/refreshController.js?v=2"></script>
+    <script src="app/controllers/tokensManagerController.js?v=2"></script>
+    <script src="app/controllers/associateController.js?v=2"></script>
+    <script src="app/controllers/confirmEmailController.js?v=2"></script>
+    <script src="app/controllers/dashboardController.js?v=2"></script>
+    <script src="app/controllers/accountsController.js?v=2"></script>
+    <script src="app/controllers/error404.js?v=2"></script>
+    <script src="app/controllers/UsersController.js?v=2"></script>
+    <script src="app/controllers/storeController.js?v=2"></script>
+    <!-- Load custom filters -->
+    <script src="app/filters/gravatar.js"></script>
+    <script src="app/filters/markdown.js"></script>
+    <!-- Load custom directives -->
+    <script src="app/directives/directives.js?v=2"></script>
+    <script src="scripts/ng-file-upload-all.min.js"></script>
+
+
+
+    <script src="js/creative.js"></script>
+    <script src="js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    <script src="js/bootstrap_carousel.js"></script>
+</body>
+
+</html>

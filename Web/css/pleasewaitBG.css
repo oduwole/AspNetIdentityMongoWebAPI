@@ -1,0 +1,211 @@
+﻿ #spinningTextG {
+            width: 240px;
+            height: undefinedpx;
+        }
+
+        .spinningTextG {
+            color: #0B1C8A;
+            font-family: Arial;
+            font-size: 25px;
+            text-decoration: none;
+            font-weight: normal;
+            font-style: normal;
+            float: left;
+            -moz-animation-name: bounce_spinningTextG;
+            -moz-animation-duration: 1.3s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-direction: normal;
+            -moz-transform: scale(.3);
+            -webkit-animation-name: bounce_spinningTextG;
+            -webkit-animation-duration: 1.3s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: normal;
+            -webkit-transform: scale(.3);
+            -ms-animation-name: bounce_spinningTextG;
+            -ms-animation-duration: 1.3s;
+            -ms-animation-iteration-count: infinite;
+            -ms-animation-direction: normal;
+            -ms-transform: scale(.3);
+            -o-animation-name: bounce_spinningTextG;
+            -o-animation-duration: 1.3s;
+            -o-animation-iteration-count: infinite;
+            -o-animation-direction: normal;
+            -o-transform: scale(.3);
+            animation-name: bounce_spinningTextG;
+            animation-duration: 1.3s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            transform: scale(.3);
+        }
+
+        #spinningTextG_1 {
+            -moz-animation-delay: 2.34s;
+            -webkit-animation-delay: 2.34s;
+            -ms-animation-delay: 2.34s;
+            -o-animation-delay: 2.34s;
+            animation-delay: 2.34s;
+        }
+
+        #spinningTextG_2 {
+            -moz-animation-delay: 2.21s;
+            -webkit-animation-delay: 2.21s;
+            -ms-animation-delay: 2.21s;
+            -o-animation-delay: 2.21s;
+            animation-delay: 2.21s;
+        }
+
+        #spinningTextG_3 {
+            -moz-animation-delay: 2.08s;
+            -webkit-animation-delay: 2.08s;
+            -ms-animation-delay: 2.08s;
+            -o-animation-delay: 2.08s;
+            animation-delay: 2.08s;
+        }
+
+        #spinningTextG_4 {
+            -moz-animation-delay: 1.95s;
+            -webkit-animation-delay: 1.95s;
+            -ms-animation-delay: 1.95s;
+            -o-animation-delay: 1.95s;
+            animation-delay: 1.95s;
+        }
+
+        #spinningTextG_5 {
+            -moz-animation-delay: 1.82s;
+            -webkit-animation-delay: 1.82s;
+            -ms-animation-delay: 1.82s;
+            -o-animation-delay: 1.82s;
+            animation-delay: 1.82s;
+        }
+
+        #spinningTextG_6 {
+            -moz-animation-delay: 1.69s;
+            -webkit-animation-delay: 1.69s;
+            -ms-animation-delay: 1.69s;
+            -o-animation-delay: 1.69s;
+            animation-delay: 1.69s;
+        }
+
+        #spinningTextG_7 {
+            -moz-animation-delay: 1.56s;
+            -webkit-animation-delay: 1.56s;
+            -ms-animation-delay: 1.56s;
+            -o-animation-delay: 1.56s;
+            animation-delay: 1.56s;
+        }
+
+        #spinningTextG_8 {
+            -moz-animation-delay: 1.43s;
+            -webkit-animation-delay: 1.43s;
+            -ms-animation-delay: 1.43s;
+            -o-animation-delay: 1.43s;
+            animation-delay: 1.43s;
+        }
+
+        #spinningTextG_9 {
+            -moz-animation-delay: 1.3s;
+            -webkit-animation-delay: 1.3s;
+            -ms-animation-delay: 1.3s;
+            -o-animation-delay: 1.3s;
+            animation-delay: 1.3s;
+        }
+
+        #spinningTextG_10 {
+            -moz-animation-delay: 1.17s;
+            -webkit-animation-delay: 1.17s;
+            -ms-animation-delay: 1.17s;
+            -o-animation-delay: 1.17s;
+            animation-delay: 1.17s;
+        }
+
+        #spinningTextG_11 {
+            -moz-animation-delay: 1.04s;
+            -webkit-animation-delay: 1.04s;
+            -ms-animation-delay: 1.04s;
+            -o-animation-delay: 1.04s;
+            animation-delay: 1.04s;
+        }
+
+        #spinningTextG_12 {
+            -moz-animation-delay: 0.91s;
+            -webkit-animation-delay: 0.91s;
+            -ms-animation-delay: 0.91s;
+            -o-animation-delay: 0.91s;
+            animation-delay: 0.91s;
+        }
+
+        #spinningTextG_13 {
+            -moz-animation-delay: 0.78s;
+            -webkit-animation-delay: 0.78s;
+            -ms-animation-delay: 0.78s;
+            -o-animation-delay: 0.78s;
+            animation-delay: 0.78s;
+        }
+
+        #spinningTextG_14 {
+            -moz-animation-delay: 0.65s;
+            -webkit-animation-delay: 0.65s;
+            -ms-animation-delay: 0.65s;
+            -o-animation-delay: 0.65s;
+            animation-delay: 0.65s;
+        }
+
+        @-moz-keyframes bounce_spinningTextG {
+            0% {
+                -moz-transform: scale(1);
+                color: #0B1C8A;
+            }
+
+            100% {
+                -moz-transform: scale(.3) rotate(90deg);
+                color: #CC8212;
+            }
+        }
+
+        @-webkit-keyframes bounce_spinningTextG {
+            0% {
+                -webkit-transform: scale(1);
+                color: #0B1C8A;
+            }
+
+            100% {
+                -webkit-transform: scale(.3) rotate(90deg);
+                color: #CC8212;
+            }
+        }
+
+        @-ms-keyframes bounce_spinningTextG {
+            0% {
+                -ms-transform: scale(1);
+                color: #0B1C8A;
+            }
+
+            100% {
+                -ms-transform: scale(.3) rotate(90deg);
+                color: #CC8212;
+            }
+        }
+
+        @-o-keyframes bounce_spinningTextG {
+            0% {
+                -o-transform: scale(1);
+                color: #0B1C8A;
+            }
+
+            100% {
+                -o-transform: scale(.3) rotate(90deg);
+                color: #CC8212;
+            }
+        }
+
+        @keyframes bounce_spinningTextG {
+            0% {
+                transform: scale(1);
+                color: #0B1C8A;
+            }
+
+            100% {
+                transform: scale(.3) rotate(90deg);
+                color: #CC8212;
+            }
+        }

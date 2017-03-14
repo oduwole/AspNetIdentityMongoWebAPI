@@ -1,0 +1,54 @@
+﻿.fu-drop-area {
+    border: 2px dashed gray;
+    border-color: gray;
+    color: gray;
+    height: 100px;
+    line-height: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.fu-drop-area:hover, .fu-drop-area.dragover {
+    background: greenyellow;
+    border-color: black;
+    color: black;
+}
+.dropzone {
+     border: 2px dashed gray;
+    border-color: gray;
+    /*color: gray;*/
+    height: 100px;
+    line-height: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    vertical-align: middle;
+  /*width: 250px;
+  height: 45px;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 30px;
+  margin: 20px;
+  font-family: Arial;*/
+}
+
+.dropzone:hover, .dropzone.dragover {
+    background: blue;
+    border-color: black;
+    color: black;
+}
+
+.image-container {
+    width: 300px;
+    height: 300px;
+}
+
+.image-container img {
+   max-width: 100%;   
+}
+
+.file-name {
+    font-family: Aria;
+}

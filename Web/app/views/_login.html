@@ -1,0 +1,41 @@
+﻿<br /><br /><br />
+<form role="form">
+    <div class="row">
+        <div class="col-md-1">
+            &nbsp;
+        </div>
+        <div class="col-md-4">
+            <h2 class="form-login-heading">Login</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" data-ng-model="loginData.userName" required autofocus>
+                <!--<div ng-messages="registration.userName.$error" ng-messages-include="messages.html"></div>-->
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" data-ng-model="loginData.password" required>
+            </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" data-ng-model="loginData.useRefreshTokens"><strong> Use Refresh Tokens</strong>
+                    </label>
+                </div>
+                <button class="btn btn-md btn-info btn-block" type="submit" data-ng-click="login()" v-busy="isBusy" v-busy-label="please wait ..." v-pressable>Login</button>
+                <div data-ng-hide="message == ''" class="alert alert-danger">
+                    {{message}}
+                </div>
+                <a href="#/forgotpassword">Forgot Password</a>
+            </div>
+        <div class="col-md-4">
+            <h2 class="form-login-heading">Social Logins</h2>
+            <p>Or you can login using one of the social logins bleow</p>
+            <button class="btn btn-large btn-facebook btn-block" type="button" data-ng-click="authExternalProvider('Facebook')"><i class="fa fa-facebook"></i> | Connect with Facebook</button>
+            <button class="btn btn-large btn-twitter btn-block" type="button" data-ng-click="authExternalProvider('Twitter')"><i class="fa fa-twitter"></i> | Connect with Twitter</button>
+            <button class="btn btn-large btn-pinterest btn-block" type="button" data-ng-click="authExternalProvider('Facebook')"><i class="fa fa-pinterest"></i> | Connect with Microsoft</button>
+            <button class="btn btn-large btn-linkedin btn-block" type="button" data-ng-click="authExternalProvider('linkedin')"><i class="fa fa-linkedin"></i> | Connect with LinkedIn</button>
+            <button class="btn btn-large btn-instagram btn-block" type="button" data-ng-click="authExternalProvider('instagram')"><i class="fa fa-instagram"></i> | Connect with instagram</button>
+            <button class="btn btn-large btn-google-plus btn-block" type="button" data-ng-click="authExternalProvider('Google')"><i class="fa fa-google-plus"></i> | Connect with Google+</button>
+        </div>
+        <div class="col-md-1">
+            &nbsp;
+        </div>
+    </div>
+</form>

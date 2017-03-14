@@ -1,0 +1,29 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">{{modalOptions.headerText}}</h3>
+</div>
+<div class="modal-body">
+    
+    <!--<select >
+        <option ng-repeat="d in modalOptions.category" ng-model="selectOption">{{d.categoryName}}</option>
+    </select>-->
+    <select name="lvProdName" id="lvProdName" class="form-control" ng-model="lvProdName">
+        <option value="{{d.productName || 'NIL'}}" ng-repeat="d in modalOptions.category">{{d.productName || 'NIL'}}</option>
+    </select>
+    <br />
+    <textarea id="txtCampMessage" ng-model="txtCampMessage" class=" form-control " required placeholder="type message here"></textarea><br />
+    <input type="text" ng-model="txtLocation" id="txtLocation" placeholder="Location" class=" form-control" /><br />
+    <input type="date" ng-model="startDate" id="startDate" class=" form-control" placeholder="Start Date" /><br />
+    <input type="date" ng-model="endDate" id="endDate" class=" form-control" placeholder="End Date" /><br />
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary"
+            data-ng-click="modalOptions.close()">
+        {{modalOptions.closeButtonText}}
+    </button>
+    <button class="btn btn-warning "
+            data-ng-click="modalOptions.ok();">
+        {{modalOptions.actionButtonText}}
+    </button>
+    <!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>-->
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="de" ng-app="demoApp">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="fragment" content="#"/>
+    <title>angularjs-crypto Demo</title>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="components/highlightjs/styles/default.css" />
+    <!-- endbower -->
+
+    <!-- bower:js -->
+    <script src="components/jquery/dist/jquery.js"></script>
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-cookies/angular-cookies.js"></script>
+    <script src="components/angular-resource/angular-resource.js"></script>
+    <script src="components/angular-route/angular-route.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="components/highlightjs/highlight.pack.js"></script>
+    <script src="components/angular-highlightjs/angular-highlightjs.js"></script>
+    <!-- endbower -->	    
+
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-mocks.js"></script>
+ 
+    <!-- contains the angularjs-crypt http interceptor named cryptoHttpInterceptor-->
+    <script type='text/javascript' src="js/lib/plugins/CryptoJSCipher.js"></script>
+    <script type='text/javascript' src="js/lib/ContentHeaderCheck.js"></script>
+    <script type='text/javascript' src="js/lib/angularjs-crypto.js"></script>
+    <!-- cryptojs aes files -->
+    <script type='text/javascript' src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+    <script type='text/javascript' src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/mode-ecb.js"></script>
+
+    <!-- demoApp js files -->
+    <script type='text/javascript' src="js/app.js"></script>
+    <script type='text/javascript' src="js/controllers.js"></script>
+    <script type='text/javascript' src="js/services.js"></script>
+
+    <!-- mock backend -->
+    <!--<script type='text/javascript' src="test/e2e/mockApp.js"></script>-->
+    
+</head>
+<body>
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/#/get">get</a></li>
+        <li role="presentation"><a href="/#/post">post</a></li>
+        <li role="presentation"><a href="/#/query">query</a></li>
+        <li role="presentation"><a href="/#/fullquery">fullquery</a></li>
+        <li role="presentation"><a href="/#/fullbody">fullbody</a></li>
+        <li role="presentation"><a href="/#/decryptbody">decrypt body</a></li>
+    </ul>
+    <div ng-view></div>
+</body>
+</html>

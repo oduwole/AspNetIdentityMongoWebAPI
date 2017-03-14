@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="Deitalyst">
+<head>
+
+    <meta name="keywords" content="Deitalyst, An online data market store" />
+    <meta name="description" content="SPA built using angularjs,authentication is done using bearer token,back end built using Asp.net web api 2 and OWIN Framework,creatd by Deitalyst Development Team" />
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Deitalyst</title>
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/css/social-buttons.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/sidebarMenu.css" rel="stylesheet" />
+    <link href="content/css/toastr.min.css" rel="stylesheet" />
+    <link href="bower_components/main.css" rel="stylesheet" />
+    <link href="bower_components/v-button/dist/v-button.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="content/css/ng-tags-input.min.css" rel="stylesheet" />
+    <link href="bower_components/angular-tour/dist/angular-tour.css" rel="stylesheet" />
+    <!--<link href="content/css/customthemes.css" rel="stylesheet" />-->
+    <!--<link href="content/css/style.css" rel="stylesheet" />-->
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexController">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>-->
+                    <!--<li data-ng-hide="!authentication.isAuth"><a href="#/dashboard">Dashboard</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="#/refresh">Refresh Token</a></li>-->
+                    <!--<li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>-->
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                    <li data-ng-hide="!authentication.isAuth" class="dropdown">
+                        <a href="" class="dropdown-toggle account" data-toggle="dropdown">
+                            <!--<div class="avatar">
+                                <img src="img/avatar.jpg" class="img-rounded" alt="avatar" />
+                            </div>-->
+                            <i class="fa fa-angle-down pull-right"></i>
+                            <div class="user-mini pull-right">
+                                <span class="welcome">Welcome,</span>
+                                <span>{{authentication.userName}}</span>
+                                <input id="hrusername" type="hidden" value="{{authentication.userName}}" />
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#/">
+                                    <i class="fa fa-user"></i>
+                                    <span class="hidden-sm text">Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/" class="ajax-link">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="hidden-sm text">Messages</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-cog"></i>
+                                    <span class="hidden-sm text">Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" data-ng-click="logOut()">
+                                    <i class="fa fa-power-off"></i>
+                                    <span class="hidden-sm text">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="jumbotron">-->
+    <!--<p>Your one stop Fashion Web Store</p>-->
+    <!--<div class="container">
+
+
+    </div>-->
+    <!--<h1>Jabolani</h1>-->
+    <!--<div class="page-header text-center">
+
+    </div>-->
+    <!--</div>-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <!--<div class="col-xs-2 ">
+                <div data-ng-controller="indexController" data-ng-hide="!authentication.isAuth" data-ng-include="'app/views/sidebar.html'" id="sidebar-left"></div>
+            </div>-->
+
+            <!--<div data-ng-view></div>-->
+            <div class=" =col-xs-10">
+                <div data-ng-view="" class="shuffle-animation"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--<hr />-->
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-muted">Created by Oduwole Oluwasegun. Twitter: <a target="_blank" href="http://twitter.com/sexy2708">@segxy2708</a></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-muted">Oduwole Oluwasegun Blog: <a target="_blank" href="http://oluwasegunoduwole.blogspot.com">oduwole oluwasegun</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/jq_sidebar.js"></script>
+    <script src="admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- 3rd party libraries -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!--<script src="scripts/angular.min.js"></script>-->
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/v-button/dist/v-button.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>-->
+    <script src="app/services/common.js"></script>
+    <script src="app/services/logger.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/angularjs-crypto.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/angularjs-crypto.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/plugins/CryptoJSCipher.js"></script>
+    <script src="scripts/aes.js"></script>
+    <script src="scripts/mode-ecb.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/lib/ContentHeaderCheck.js"></script>
+    <script src="bower_components/angularjs-crypto/public/js/controllers.js"></script>
+    <script src="scripts/toastr.min.js"></script>
+    <script src="bower_components/angular-tour/dist/angular-tour-tpls.min.js"></script>
+    <script src="bower_components/angular-downloader/src/js/angular-downloader.js"></script>
+
+    <script src="scripts/shoppingcart/store.js"></script>
+    <script src="scripts/shoppingcart/shoppingCart.js"></script>
+    <script src="scripts/shoppingcart/product.js"></script>
+
+    <script src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+    <!-- Include the ngReCaptcha directive -->
+    <script src="bower_components/angular-recaptcha/release/angular-recaptcha.min.js"></script>
+    <!--<script src="./angular-recaptcha.js"></script>-->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js?v=2"></script>
+    <script src="scripts/ng-tags-input.min.js"></script>
+
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js?v=2"></script>
+    <script src="app/services/authService.js?v=2"></script>
+    <script src="app/services/ordersService.js?v=2"></script>
+    <script src="app/services/tokensManagerService.js?v=2"></script>
+    <script src="app/services/browser.js?v=2"></script>
+    <script src="app/services/dashboardService.js?v=2"></script>
+    <script src="app/services/modalService.js?v=2"></script>
+    <script src="app/services/datasetsServices.js?v=2"></script>
+    <script src="app/services/storesService.js?v=2"></script>
+    <script src="app/services/transactionsService.js"></script>
+
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js?v=2"></script>
+    <script src="app/controllers/homeController.js?v=2"></script>
+    <script src="app/controllers/loginController.js?v=2"></script>
+    <script src="app/controllers/signupController.js?v=2"></script>
+    <script src="app/controllers/ordersController.js?v=2"></script>
+    <script src="app/controllers/refreshController.js?v=2"></script>
+    <script src="app/controllers/tokensManagerController.js?v=2"></script>
+    <script src="app/controllers/associateController.js?v=2"></script>
+    <script src="app/controllers/confirmEmailController.js?v=2"></script>
+    <script src="app/controllers/dashboardController.js?v=2"></script>
+    <script src="app/controllers/accountsController.js?v=2"></script>
+    <script src="app/controllers/error404.js?v=2"></script>
+    <script src="app/controllers/UsersController.js?v=2"></script>
+    <script src="app/controllers/storeController.js?v=2"></script>
+    <!-- Load custom filters -->
+    <!-- Load custom directives -->
+    <script src="app/directives/directives.js?v=2"></script>
+    <script src="scripts/ng-file-upload-all.min.js"></script>
+
+</body>
+</html>

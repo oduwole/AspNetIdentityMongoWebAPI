@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html data-ng-app="damorel">
+
+<head>
+
+    <meta name="keywords" content="Damorel, An online fashion market store" />
+    <meta name="description" content=" " />
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Damorel</title>
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+
+
+    <link href="dist/css/main.css" rel="stylesheet" />
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/dragdrop.css" rel="stylesheet" />
+    <link href="../content/css/ng-tags-input.min.css" rel="stylesheet" />
+    <link href="../bower_components/angular-tour/dist/angular-tour.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />-->
+    <!--<link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />
+    <link href="../content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/css/social-buttons.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/sidebarMenu.css" rel="stylesheet" />
+    <link href="../content/css/toastr.min.css" rel="stylesheet" />
+    <link href="bower_components/main.css" rel="stylesheet" />
+    <link href="bower_components/v-button/dist/v-button.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+    <!--<link href="content/css/customthemes.css" rel="stylesheet" />-->
+    <!--<link href="content/css/style.css" rel="stylesheet" />-->
+    <style>
+        .avatar {
+            margin: 25px auto;
+        }
+        
+        .slim-view {
+            max-width: 310px;
+            margin: 15px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Deitalyst</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#/UserProfile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li>
+                            <a href="#/Settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="../#/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <!--data-ng-hide="!authentication.isAuth">-->
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Root Administration<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#/adm_approvals">Approvals</a>
+                                </li>
+                                <li>
+                                    <a href="#/adm_setup">Setups</a>
+                                </li>
+                                <li>
+                                    <a href="#/metrics">Metrics</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Uploads<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#/datasets">Datasets</a>
+                                </li>
+                                <li>
+                                    <a href="#/infographics">Infographics</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <!--<li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="panels-wells.html">Panels and Wells</a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="notifications.html">Notifications</a>
+                                </li>
+                                <li>
+                                    <a href="typography.html">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="icons.html"> Icons</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grid</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>
+                                   
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="blank.html">Blank Page</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">Login Page</a>
+                                </li>
+                            </ul>
+                           
+                        </li>-->
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+    </div>
+
+    <div id="page-wrapper">
+        <div data-ng-view="" class="shuffle-animation"></div>
+    </div>
+    <!--<div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-2 ">
+                    <div data-ng-controller="indexController" data-ng-hide="!authentication.isAuth" data-ng-include="'app/views/sidebar.html'" id="sidebar-left"></div>
+                </div>
+
+                <div class=" =col-xs-10">
+                    <div data-ng-view="" class="shuffle-animation"></div>
+                </div>
+            </div>
+        </div>-->
+    <!--<hr />-->
+
+    <div id="footer" data-ng-hide="authentication.isAuth">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-muted">Created by Oduwole Oluwasegun. Twitter: <a target="_blank" href="http://twitter.com/sexy2708">@segxy2708</a></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-muted">Oduwole Oluwasegun Blog: <a target="_blank" href="http://oluwasegunoduwole.blogspot.com">oduwole oluwasegun</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="bower_components/raphael/raphael-min.js"></script>
+    <script src="bower_components/morrisjs/morris.min.js"></script>
+    <!--<script src="js/morris-data.js"></script>-->
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+    <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <script src="../scripts/jq_sidebar.js"></script>
+    <!-- 3rd party libraries -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <!--<script src="../bower_components/angular/angular.min.js"></script>-->
+    <!--<script src="scripts/angular.min.js"></script>-->
+    <script src="../scripts/angular-route.min.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/v-button/dist/v-button.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>-->
+    <script src="../app/services/common.js"></script>
+    <script src="../app/services/logger.js"></script>
+    <script src="../scripts/angular-local-storage.min.js"></script>
+    <script src="../scripts/loading-bar.min.js"></script>
+    <script src="../bower_components/angularjs-crypto/public/js/lib/angularjs-crypto.js"></script>
+    <script src="../bower_components/angularjs-crypto/public/js/lib/angularjs-crypto.js"></script>
+    <script src="../bower_components/angularjs-crypto/public/js/lib/plugins/CryptoJSCipher.js"></script>
+    <script src="../scripts/aes.js"></script>
+    <script src="../scripts/mode-ecb.js"></script>
+    <script src="../bower_components/angularjs-crypto/public/js/lib/ContentHeaderCheck.js"></script>
+    <script src="../bower_components/angularjs-crypto/public/js/controllers.js"></script>
+    <script src="../scripts/toastr.min.js"></script>
+    <script src="../bower_components/angular-tour/dist/angular-tour-tpls.min.js"></script>
+    <script src="../bower_components/angular-downloader/src/js/angular-downloader.js"></script>
+    <script src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+    <!-- Include the ngReCaptcha directive -->
+    <script src="../bower_components/angular-recaptcha/release/angular-recaptcha.min.js"></script>
+    <!--<script src="./angular-recaptcha.js"></script>-->
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="../scripts/shoppingcart/product.js"></script>
+    <script src="../scripts/shoppingcart/shoppingCart.js"></script>
+    <script src="../scripts/shoppingcart/store.js"></script>
+
+    <!-- Load app main script -->
+    <script src="../app/app.js?v=2"></script>
+    <script src="../scripts/ng-tags-input.min.js"></script>
+
+    <!-- Load services -->
+    <script src="../app/services/authInterceptorService.js?v=2"></script>
+    <script src="../app/services/authService.js?v=2"></script>
+    <script src="../app/services/ordersService.js?v=2"></script>
+    <script src="../app/services/tokensManagerService.js?v=2"></script>
+    <script src="../app/services/browser.js?v=2"></script>
+    <script src="../app/services/dashboardService.js?v=2"></script>
+    <script src="../app/services/datasetsServices.js?v=2"></script>
+    <script src="../app/services/modalService.js?v=2"></script>
+    <script src="../app/services/transactionsService.js"></script>
+    <script src="../app/services/csvService.js"></script>
+    <script src="../app/services/doWorkerService.js?v=2"></script>
+
+    <!-- Load controllers -->
+    <script src="../app/controllers/indexController.js?v=2"></script>
+    <script src="../app/controllers/homeController.js?v=2"></script>
+    <script src="../app/controllers/loginController.js?v=2"></script>
+    <script src="../app/controllers/signupController.js?v=2"></script>
+    <script src="../app/controllers/ordersController.js?v=2"></script>
+    <script src="../app/controllers/refreshController.js?v=2"></script>
+    <script src="../app/controllers/tokensManagerController.js?v=2"></script>
+    <script src="../app/controllers/associateController.js?v=2"></script>
+    <script src="../app/controllers/confirmEmailController.js?v=2"></script>
+    <script src="../app/controllers/dashboardController.js?v=2"></script>
+    <script src="../app/controllers/accountsController.js?v=2"></script>
+    <script src="../app/controllers/AdminController.js?v=2"></script>
+    <script src="../app/controllers/UploadsController.js?v=2"></script>
+    <script src="../app/controllers/error404.js?v=2"></script>
+    <script src="../app/controllers/UsersController.js?v=2"></script>
+    <script src="../app/services/storesService.js?v=2"></script>
+
+    <!-- Load custom filters -->
+    <script src="../app/filters/gravatar.js"></script>
+    <script src="../app/filters/markdown.js"></script>
+    <!-- Load custom directives -->
+    <script src="../app/directives/directives.js?v=2"></script>
+    <script src="../scripts/ng-file-upload-all.min.js"></script>
+    <script src="../app/primes.js"></script>
+
+</body>
+
+</html>
